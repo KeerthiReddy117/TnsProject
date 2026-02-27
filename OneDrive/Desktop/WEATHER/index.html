@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simple Weather App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Weather App</h1>
+
+    <form id="searchForm" class="search">
+      <input id="cityInput" type="text" placeholder="Enter city (e.g., London)" required />
+      <button type="submit">Search</button>
+      <button id="geoBtn" type="button" title="Use my location">Use My Location</button>
+    </form>
+
+    <div class="controls">
+      <label>
+        <input id="unitToggle" type="checkbox" />
+        °F
+      </label>
+    </div>
+
+    <div id="status" class="status">Enter a city and press Search.</div>
+
+    <section id="weatherCard" class="card hidden" aria-live="polite">
+      <div class="top">
+        <div>
+          <h2 id="location"></h2>
+          <p id="description" class="muted"></p>
+        </div>
+        <div id="iconWrap" class="icon"></div>
+      </div>
+
+      <div class="details">
+        <div class="temp">
+          <span id="temp"></span>
+          <small id="feelsLike"></small>
+        </div>
+
+        <ul class="list">
+          <li>Humidity: <span id="humidity"></span>%</li>
+          <li>Wind: <span id="wind"></span> m/s</li>
+          <li>Clouds: <span id="clouds"></span>%</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Put your API key in config.js (see README or config.example.js) -->
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
